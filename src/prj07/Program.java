@@ -1,4 +1,5 @@
 package prj07;
+
 class Human{
 	String name;
 	double weight;
@@ -31,25 +32,34 @@ class Human{
 		return "Human: "+this.name+", "+this.weight;
 	}
 }
-class Student extends Human{
-	private int idGroup;
+
+//-------------------------------------------------------------------------------------------------\\
+
+class Student extends Human{ // class student inherit human so he has all atributes
+							 // and methods from human class. 
+		
+	private int idGroup; // plus new atribute - group ID
 	
-	public int getIdGroup() {
-		return idGroup;
-	}
-	public void setIdGroup(int idGroup) {
-		this.idGroup = idGroup;
-	}
-	public Student(String name, double weight,int idGroup) {
-		super(name, weight);
-		this.idGroup = idGroup;
-	}
-	void study() {System.out.println("Study....");}
+		public int getIdGroup() {
+			return idGroup;
+		}
+		public void setIdGroup(int idGroup) {
+			this.idGroup = idGroup;
+		}
+		public Student(String name, double weight,int idGroup) {
+			super(name, weight);
+			this.idGroup = idGroup;
+		}
+		
+		void study() {System.out.println("Study....");} // plus new method - study
+	
 	@Override
 	public String toString() {
 		return "Student: "+ super.toString()+", "+this.idGroup;
 	}
 }
+
+//------------Same with class Doctor -------------------------------------\\
 class Doctor extends Human{
 	
 	private int idLicense;
@@ -71,6 +81,7 @@ class Doctor extends Human{
 	}
 	void cure() {System.out.println("Cure......");}
 }
+//----------------Same with class Warrior-----------------------------------------\\
 class Warrior extends Human{
 	
 	int power;
@@ -95,7 +106,7 @@ public class Program {
 		Doctor doc1 = new Doctor("Aybolit", 55, 11);
 		Warrior war1 = new Warrior("BrusLee", 45, 100);
 		
-		Human [] masHum = new Human[3]; // восходящее преобразование типа \\
+		Human [] masHum = new Human[3]; // восходящее преобразование типа (Upcasting) \\
 		masHum[0]=st1;
 		masHum[1]=doc1;
 		masHum[2]=war1;
