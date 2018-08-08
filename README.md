@@ -1,2 +1,2 @@
-# Lesson06_inheritence
-simple example of inheritence in java
+# Lesson06_inheritance
+simple example of inheritance in java
